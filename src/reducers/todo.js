@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { GET_TODOS,DELETE_TODO,CREATE_TODO, COMPLETE,CREATE_CHART } from "../actions/types";
 
 const initialState = {
@@ -21,7 +22,7 @@ export default function(state=initialState,action){
         case DELETE_TODO:
             return {
                 ...state,
-                todos : state.todos.filter(todo => todo.id != action.payload)
+                todos : state.todos.filter(todo => todo.id !== action.payload)
             };
         case COMPLETE:
             // return state
